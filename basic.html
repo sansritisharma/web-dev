@@ -1,126 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             padding: 0;
         }
+
         #header {
+            width: 100%;
             font-family: Arial;
-            height: 100px;
+            height: 8vh;
             background-color: black;
         }
-        #contentwrapper {
-            width:100%;
-            float:left;          /* so that the footer attaches itself at the bottom of 3 columns */
+
+        .row {
+            content: "";
+            display: table;
+            clear: both;
+            width: 100%;
         }
-        #contentcolumn {
-            /* margin: 0 230px 0 230px;     both columns on the sides will be 230px at all times */
-        }
-        #left-column {
-            margin-left:-100%;
+
+        .column {
             float: left;
-            width: 230px;
-            background-color: cornflowerblue;
+            width: 33.33%;
+            padding: 1%;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            height: 90vh;
+
         }
-        #right-column {
-            margin-left: -230px;
-            float: left;
-            width: 230px;
-            background-color: yellowgreen;
+        .left{
+            background-color: greenyellow;
         }
-        .innertext {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #5e5e5e;
-            margin: 20px;
+        .right{
+            background-color: hotpink;
         }
+        .center{
+            background-color: pink;
+        }
+
         #footer {
             clear: left;
-            padding: 4px;
+            padding: 14px;
             text-align: center;
             color: white;
             background-color: black;
             width: 100%;
+            bottom: 0;
+            position: absolute;
             margin-bottom: 0;
         }
+
         /* Navigation bar*/
-        ul {
+        ol {
             margin: 0;
             padding: 0;
             color: black;
-            list-style-type: disc;
+            list-style-type: none;
         }
+
         li {
-            float:left;
-            border-right: 1px solid  white;
+            float: left;
+            /* border-right: 1px solid rgba(255, 255, 255, 0.185); */
         }
+
         li:last-child {
             border-right: none;
         }
+
         li a {
-            display: block;         /* try changing it */
+            display: flex;
+            /* try changing it */
             padding: 14px 16px;
             color: white;
             text-align: center;
             text-decoration: none;
         }
+
         li :hover {
             background-color: #808080;
         }
+
         .active {
             background-color: #0099ff;
         }
 
         /*  Responsive layout css */
-        @media (max-width: 840px) {  /*Drop right column down*/
-            #left-column {
-                margin-left: -100%;
-            }
-            #right-column {
-                float: none;
-                width: 100%;
-                margin-left: 0;
-                clear:both;
-            }
-            #content-column {
-                margin-left: 0;
-            }
-        }
     </style>
 </head>
+
 <body>
-    <div id="container">
+    <div>
         <div id="header">
-            <ul style="display: inline;"></ul>
-               <li><a class="active" href="#home">Home</a></li>
-               <li><a href="#news">About</a></li>
-               <li><a href="#contact">News</a></li>
-               <li><a href="#about">Contact</a></li>
+            <ol>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">About</a></li>
+            <li><a href="#contact">News</a></li>
+            <li><a href="#about">Contact</a></li></ol>
         </div>
-        <div id="contentwrapper">
-            <div id="content-column">
-                <div class="innertext">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet sed aspernatur aperiam debitis libero, consectetur perspiciatis veritatis inventore quos velit cumque ex, atque architecto error aut omnis. Mollitia nobis sit assumenda veniam tempore officiis porro, omnis cupiditate, soluta perferendis accusamus.</p>
-                    <p>Inventore provident odit ad earum vero fugiat cumque labore corporis ducimus doloribus cupiditate, distinctio est reiciendis? Reiciendis sint aperiam, labore voluptatum magni non placeat nihil vel adipisci accusantium tempora quae! Non laboriosam adipisci assumenda officia quas sed sequi, facilis cupiditate!</p>
-                </div>
+        <div class="row">
+            <div class="column left">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse, quibusdam cumque vel unde eius
+                reprehenderit, corrupti nulla voluptatibus aut voluptatem repudiandae officiis atque dolor nostrum
+                cupiditate distinctio fugit. Unde!
             </div>
+            <div class="column center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum aliquam necessitatibus
+                ea illo autem perferendis, rem magnam doloremque dignissimos quibusdam voluptatum aliquid delectus
+                quasi, ipsa accusamus iusto, maiores laborum nemo?</div>
+            <div class="column right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur accusamus dolores ex,
+                iusto nobis tempore et consequuntur culpa quidem aspernatur ad perferendis placeat dolorum cupiditate
+                eos reiciendis rerum qui quasi.</div>
         </div>
+
+        <div id="footer">Footer</div>
     </div>
-    <div id="left-column">
-        <div class="innertext">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id mollitia ducimus commodi, doloribus odio temporibus soluta iste provident sapiente iusto! Soluta quaerat quo neque ullam quisquam at quibusdam, laudantium nam, et vel odit obcaecati libero. Iste commodi aliquam neque, voluptatum expedita maxime dolore eligendi quod. Harum autem aspernatur similique ea ipsam dolores commodi esse illum facere possimus? Quae fugiat culpa libero perspiciatis, labore corporis sequi consequuntur! Rerum minus eius sapiente accusantium voluptatem tenetur repudiandae, repellat odio mollitia quisquam eligendi alias!
-        </div>
-    </div>
-    <div id="right-column">
-        <div class="innertext">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id mollitia ducimus commodi, doloribus odio temporibus soluta iste provident sapiente iusto! Soluta quaerat quo neque ullam quisquam at quibusdam, laudantium nam, et vel odit obcaecati libero. Iste commodi aliquam neque, voluptatum expedita maxime dolore eligendi quod. Harum autem aspernatur similique ea ipsam dolores commodi esse illum facere possimus? Quae fugiat culpa libero perspiciatis, labore corporis sequi consequuntur! Rerum minus eius sapiente accusantium voluptatem tenetur repudiandae, repellat odio mollitia quisquam eligendi alias!
-        </div>
-    </div>
-    <div id="footer">Footer</div>
 </body>
+
 </html>
